@@ -1,0 +1,11 @@
+<% @recipes.each do |recipe| %>
+  <h3><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></h3>
+  <p>Ingredients:</p>
+  <ul>
+    <% arr = recipe.ingredients.split(", ") %>
+    <% arr.each do |ingredient| %>
+      <li><%= ingredient.capitalize %></li>
+    <% end%>
+  </ul>
+  <p>Cook Time: <%= recipe.cook_time %></p>
+<% end %>
